@@ -1,27 +1,18 @@
 package zoo.animals;
 
-public class Fish extends Animal{
-    public Fish() {
-        super("Water", "hollow", "Looking for food");
+public abstract class Fish extends Animal{
+    String waterType;
+    public Fish(String name, String habitat, String waterType){
+        super(name, habitat);
+        this.waterType = waterType;
     }
 
-    public void swim(){
-        System.out.println("I move by swimming in water with my fins.");
-    }
     @Override
     public void breathe() {
-        super.breathe();
-        System.out.println("I pass water through my gills to do that.");
+        System.out.println("I breathe through my gills to take in oxygen.");
     }
 
-    @Override
-    public void eat(){
-        System.out.println("I find food floating by me.");
-    }
-
-    @Override
-    public void die() {
-        isAlive=false;
-        System.out.println("I am no longer alive.");
+    public String getWaterType() {
+        return waterType;
     }
 }

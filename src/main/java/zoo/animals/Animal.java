@@ -2,45 +2,31 @@ package zoo.animals;
 
 public abstract class Animal {
 
+    private boolean isAlive;
+    private String name;
     private String habitat;
-    private String boneType;
-    protected boolean isAlive;
-    protected String hunger;
 
-
-    public Animal(String habitat, String boneType, String hunger){
+    public Animal(String name, String habitat){
+        this.name = name;
         this.habitat = habitat;
-        this.boneType = boneType;
-        this.hunger = hunger;
         isAlive = true;
     }
+    public abstract void breathe();
 
-    public void reproduce(){
-        System.out.println("I make more of myself.");
-    }
-
-    public abstract void eat();
-
-
-    public abstract void die();
-
-    public void breathe(){
-        System.out.println("I take oxygen into my body for respiration.");
-    }
-
-    public String getHabitat() {
-        return habitat;
-    }
-
-    public String getBoneType() {
-        return boneType;
+    public void die(){
+        isAlive = false;
+        System.out.println("This animal has died.");
     }
 
     public boolean isAlive() {
         return isAlive;
     }
 
-    public String getHunger() {
-        return hunger;
+    public String getName() {
+        return name;
+    }
+
+    public String getHabitat() {
+        return habitat;
     }
 }
