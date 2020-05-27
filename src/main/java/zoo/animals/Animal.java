@@ -17,6 +17,10 @@ public abstract class Animal {
         isAlive = false;
         System.out.println("This animal has died.");
     }
+    public void die(String causeOfDeath){
+        isAlive = false;
+        System.out.println("This animal has died due to " + causeOfDeath);
+    }
 
     public boolean isAlive() {
         return isAlive;
